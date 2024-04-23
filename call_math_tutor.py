@@ -51,19 +51,25 @@ def wait_on_run(run, thread):
     return run
     
 
-# Wait for Run1
-run1 = wait_on_run(run1, thread1)
-pretty_print(get_response(thread1))
+# # Wait for Run1
+# run1 = wait_on_run(run1, thread1)
+# pretty_print(get_response(thread1))
 
-# Wait on Run2
-run2 = wait_on_run(run2, thread2)
-pretty_print(get_response(thread2))
+# # Wait on Run2
+# run2 = wait_on_run(run2, thread2)
+# pretty_print(get_response(thread2))
 
-# Wait on Run3
-run2 = wait_on_run(run3, thread3)
-pretty_print(get_response(thread3))
+# # Wait on Run3
+# run2 = wait_on_run(run3, thread3)
+# pretty_print(get_response(thread3))
 
-# Thank our assistant on the Thread 3 :)
-run4 = submit_message(MATH_ASSISTANT_ID, thread3, "Thank you!")
-run4 = wait_on_run(run4, thread3)
-pretty_print(get_response(thread3))
+# # Thank our assistant on the Thread 3 :)
+# run4 = submit_message(MATH_ASSISTANT_ID, thread3, "Thank you!")
+# run4 = wait_on_run(run4, thread3)
+# pretty_print(get_response(thread3))
+
+thread, run = create_thread_and_run(
+    "Generate the first 20 fibbonaci numbers with code."
+)
+run = wait_on_run(run, thread)
+pretty_print(get_response(thread))
